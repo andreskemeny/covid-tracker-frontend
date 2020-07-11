@@ -13,13 +13,9 @@ import {
 } from "reactstrap";
 
 class TrackerNavbar extends Component {
-	// asignar las variables que se le pasaron al componente (props)
-	// funcion que corre cuando se llama el componente
 	constructor(props) {
-		// define los props (son constantes que se le pasan al componente)
 		super(props);
 
-		// define el estado (variables del componente que definimos nosotros)
 		this.state = {
 			collapseOpen: false,
 			modalSearch: false,
@@ -27,19 +23,14 @@ class TrackerNavbar extends Component {
 		};
 	}
 
-	// funcion que corre al momento de mostrar el component
 	componentDidMount() {
-		// event listener para saber cuando cambia el tamaño de la ventana
 		window.addEventListener("resize", this.updateColor);
 	}
 
-	// funcion que corre antes del momento de mostrar el component
 	componentWillUnmount() {
-		// event listener para saber cuando cambia el tamaño de la ventana
 		window.removeEventListener("resize", this.updateColor);
 	}
 
-	// funcion que actualiza el color del componente dependiendo del tamaño de la ventana y si esta expandido
 	updateColor = () => {
 		if (window.innerWidth < 993 && this.state.collapseOpen) {
 			this.setState({
@@ -52,7 +43,6 @@ class TrackerNavbar extends Component {
 		}
 	};
 
-	// funcion para controlar si el navbar esta expandido o no
 	toggleCollapse = () => {
 		if (this.state.collapseOpen) {
 			this.setState({
@@ -68,8 +58,6 @@ class TrackerNavbar extends Component {
 		});
 	};
 
-	// funcion que determina que es lo que se va a mostrar en el componente - lo visual.
-	// aca se usan los imports de reactstrap
 	render() {
 		return (
 			<>
